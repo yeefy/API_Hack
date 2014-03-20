@@ -1,3 +1,17 @@
 @charset "UTF-8";
 /* CSS Document */
 
+.container{
+	height: 100%;
+	width: 100%;
+}
+
+.images{
+	margin: 50px;
+}
+
+.indivImages{
+	margin: 20px;
+	width: 250px;
+	height: 250px;
+}
