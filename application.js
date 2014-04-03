@@ -18,15 +18,19 @@ function getInstagram () {
 			url:instagramAPI,
 			success: function(photo){
 				if (photo.data.length>0){
+					var imgDiv = $(".images");
+					imgDiv.hide();
+					var viewMore = $(".viewmore");
 					for (i=0; i<=photo.data.length; i++){
 						var photoImage = photo.data[i].images.low_resolution.url;
 						var photoCaption = photo.data[i].caption.text;
 						var photoLink = photo.data[i].link;
 						var photoContent = "<a href= " + photoLink + "  target='_blank'><img src= " + photoImage + " /><span class = overlay><span class = overlayInner><h3>" + photoCaption + "<h3/><span/><span/><a/>"
-						$(".images").append(photoContent).hide().fadeIn(600);
-						$(".viewmore").attr("hidden", false).hide().fadeIn(700);
+						imgDiv.append(photoContent).fadeIn(600);
+						$(".viewmore").attr("hidden", false);
 						nextTag = photo.pagination.next_max_tag_id;
 					}
+					
 				}				
 			}
 		})
@@ -43,13 +47,14 @@ function pagination () {
 			url: morePhotos,
 			success: function(photo){
 				if (photo.data.length>0){
+					var imgDiv = $(".images");
+					var viewMore = $(".viewmore");
 					for (i=0; i<=photo.data.length; i++){
 						var photoImage = photo.data[i].images.low_resolution.url;
 						var photoCaption = photo.data[i].caption.text;
 						var photoLink = photo.data[i].link;
-						var photoContent = "<a href= " + photoLink + "  target='_blank'><img src= " + photoImage + " /><span class = overlay><span class = overlayInner><h3>" + photoCaption + "<h3/><span/><span/><a/>"
-						$(".images").append(photoContent).hide().fadeIn(600);
-						$(".viewmore").attr("hidden", false).hide().fadeIn(700);
+						var moreContent = "<a href= " + photoLink + "  target='_blank'><img src= " + photoImage + " /><span class = overlay><span class = overlayInner><h3>" + photoCaption + "<h3/><span/><span/><a/>"
+						imgDiv.append(moreContent).fadeIn(600);
 						nextTag = photo.pagination.next_max_tag_id;
 					}
 				}				
@@ -74,6 +79,7 @@ $(document).ready(function(e) {
 	};
 	
 	$(".viewmore").click(function(e) {
+		e.preventDefault();
         pagination();
     });
 	
