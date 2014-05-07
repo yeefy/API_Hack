@@ -6,6 +6,11 @@
 var tag = "";
 var nextTag = "";
 
+function validation (){
+	if (tag===""||tag===" "||tag==="   "){
+		alert("enter a tag")
+	}
+}
 
 function getInstagram () {
 
@@ -72,9 +77,15 @@ $(document).ready(function(e) {
 		}
     });
 	
+	$("#button").click(function(e) {
+        submit();
+    });
+	
+
 	function submit() {
 		$(".images").empty();
-		tag = document.getElementById("input").value;
+		tag = document.getElementById("input").value.replace(/[_\W]+/g, "");
+		validation(tag);
 		getInstagram(tag);
 	};
 	
@@ -82,6 +93,14 @@ $(document).ready(function(e) {
 		e.preventDefault();
         pagination();
     });
+	
+	//shake animation
+	
+	function shake(){
+		$("#input").addClass("shake animated").delay(1000).queue(function(nextTag){
+			$(this).removeClass("shake animated");
+		});
+	}
 	
 });
 
