@@ -31,6 +31,11 @@
 	text-align:left;
 }
 
+div ul{
+	margin-top:10%;
+}
+
+
 #button{
 	display:inline-block;
 	vertical-align:middle;
@@ -43,8 +48,7 @@
 .photos{
 }
 
-.images{
-	margin: 10%;
+ul .images{
 	min-width: 918px;
 	text-align:center;
 }
@@ -98,8 +102,8 @@ a{
 		height: 40px;
 		border-radius: 3px;
 		border:thin solid rgba(51,51,51,1);
-		margin-top:20px;
-		font-size:25px;
+		margin-top:8%;
+		font-size:30px;
 		text-indent:30px;
 		background-image:url(hashtag-icon-whosevent.png);
 		background-position:left;
@@ -116,8 +120,8 @@ a{
 		height: 40px;
 		border-radius: 3px;
 		border:thin solid rgba(51,51,51,1);
-		margin:10px;
 		font-size:30px;
+		margin-top:6%;
 		text-indent:30px;
 		background-image:url(hashtag-icon-whosevent.png);
 		background-position:left;
@@ -125,20 +129,9 @@ a{
 		text-align:left;
 	}
 	
+	
 	.images{
-		margin: 10%;
 		max-width: 306px;
 		text-align:center;
 	}
-
-	.overlay{
-		opacity:0;
-		-webkit-transition: 0.5s ease-in-out;
-		position: absolute;
-		background:rgba(0,0,0,0.65);
-		width: 306px;
-		height: 306px;
-	}
-
-
 }
