@@ -32,7 +32,7 @@
 }
 
 div ul{
-	margin-top:10%;
+	margin:10%;
 }
 
 
@@ -48,10 +48,6 @@ div ul{
 .photos{
 }
 
-ul .images{
-	min-width: 918px;
-	text-align:center;
-}
 
 .overlay{
 	opacity:0;
